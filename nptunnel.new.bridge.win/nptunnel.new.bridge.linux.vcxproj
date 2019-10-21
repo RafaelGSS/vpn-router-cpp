@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{fc73cf48-79ac-42c8-acd5-514f1dcae184}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>nptunnel_new_bridge_linux</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>$(Boost_LIBRARIES);$(RemoteRootDir);$(RemoteProjectDir);$(ProjectDir);/root/boost_1_58_0/libs/;/root/projects/nptunnel.new.bridge.linux/nptunnel.bridge.v2/nptunnel.new.bridge.win/libs/curl;/root/projects/nptunnel.new.bridge.linux/nptunnel.bridge.v2/nptunnel.new.bridge.win/libs/</LibraryPath>
+    <IncludePath>$(WPPDIR);/root/projects/nptunnel.new.bridge.linux/nptunnel.bridge.v2/nptunnel.new.bridge.win/;$(BOOST_ROOT);/root/projects/nptunnel.new.bridge.linux/;/root/projects/nptunnel.new.bridge.linux/nptunnel.bridge.v2/;$(SolutionDir);/root/;$(ProjectDir);/root/boost_1_58_0/;/root/projects/nptunnel.new.bridge.linux/nptunnel.bridge.v2/nptunnel.new.bridge.win/libs/curl;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="$(WPPDIR)\wpp\libs\json\lib_json\json_reader.cpp" />
+    <ClCompile Include="$(WPPDIR)\wpp\libs\json\lib_json\json_value.cpp" />
+    <ClCompile Include="$(WPPDIR)\wpp\libs\json\lib_json\json_writer.cpp" />
+    <ClCompile Include="src\socket\packet_manipulation\memory_chunk.cpp" />
+    <ClCompile Include="src\http\remote\base\remote_api_base.cpp" />
+    <ClCompile Include="src\controller\bridge_manager.cpp" />
+    <ClCompile Include="src\http\remote\dev\local_api.cpp" />
+    <ClCompile Include="src\http\remote\production\remote_api.cpp" />
+    <ClCompile Include="src\database\dev\database_development.cpp" />
+    <ClCompile Include="src\database\production\database_production.cpp" />
+    <ClCompile Include="src\http\requester\base\base_request.cpp" />
+    <ClCompile Include="src\database\base\data_access.cpp" />
+    <ClCompile Include="src\http\requester\http_request.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\settings\file_managment\file_manager.cpp" />
+    <ClCompile Include="src\settings\file_managment\settings.cpp" />
+    <ClCompile Include="src\socket\interfaces\alias_info.cpp" />
+    <ClCompile Include="src\socket\packet_manipulation\intercall_methods.cpp" />
+    <ClCompile Include="src\socket\interfaces\struct_route.cpp" />
+    <ClCompile Include="src\socket\interfaces\connection_settings.cpp" />
+    <ClCompile Include="src\socket\tcp\tcp_monitor\tcp_monitor.cpp" />
+    <ClCompile Include="src\socket\udp\udp_socket.cpp" />
+    <ClCompile Include="src\settings\validator\validator_http.cpp" />
+    <ClCompile Include="src\socket\tcp\tcp_socket.cpp" />
+    <ClCompile Include="src\socket\tcp\connection\tcp_connection.cpp" />
+    <ClCompile Include="src\socket\tcp\connection\tcp_reproxy_basic.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\socket\interfaces\user_info.h" />
+    <ClInclude Include="src\socket\packet_manipulation\memory_chunk.h" />
+    <ClInclude Include="src\http\remote\base\remote_api_base.h" />
+    <ClInclude Include="src\controller\bridge_manager.h" />
+    <ClInclude Include="src\http\remote\dev\local_api.h" />
+    <ClInclude Include="src\http\remote\production\remote_api.h" />
+    <ClInclude Include="src\database\dev\database_development.h" />
+    <ClInclude Include="src\database\production\database_production.h" />
+    <ClInclude Include="src\http\requester\base\base_request.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="src\database\base\data_access.h" />
+    <ClInclude Include="src\http\requester\http_request.h" />
+    <ClInclude Include="libs\curl\curl.h" />
+    <ClInclude Include="libs\curl\curlver.h" />
+    <ClInclude Include="libs\curl\easy.h" />
+    <ClInclude Include="libs\curl\mprintf.h" />
+    <ClInclude Include="libs\curl\multi.h" />
+    <ClInclude Include="libs\curl\stdcheaders.h" />
+    <ClInclude Include="libs\curl\types.h" />
+    <ClInclude Include="src\settings\file_managment\file_manager.h" />
+    <ClInclude Include="src\settings\file_managment\settings.h" />
+    <ClInclude Include="src\socket\interfaces\alias_info.h" />
+    <ClInclude Include="src\socket\packet_manipulation\intercall_methods.h" />
+    <ClInclude Include="src\socket\interfaces\struct_route.h" />
+    <ClInclude Include="src\socket\interfaces\connection_settings.h" />
+    <ClInclude Include="src\socket\tcp\tcp_monitor\tcp_monitor.h" />
+    <ClInclude Include="src\socket\udp\udp_socket.h" />
+    <ClInclude Include="src\settings\validator\validator_http.h" />
+    <ClInclude Include="src\socket\tcp\tcp_socket.h" />
+    <ClInclude Include="src\socket\tcp\connection\tcp_connection.h" />
+    <ClInclude Include="src\socket\tcp\connection\tcp_reproxy_basic.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bridge.conf" />
+    <None Include="libcurl.dll" />
+    <None Include="libs\curl\cacert.pem" />
+    <None Include="libs\curl\libcurl.dll" />
+    <None Include="libs\curl\libcurl.exp" />
+    <None Include="libs\zlib1.dll" />
+    <None Include="zlib1.dll" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <PreprocessorDefinitions>SCT_NECESSARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <UnrollLoops>true</UnrollLoops>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>boost_system;boost_thread;boost_filesystem;curl;pthread</LibraryDependencies>
+      <AdditionalDependencies>/root/projects/nptunnel.new.bridge.linux/nptunnel.bridge.v2/nptunnel.new.bridge.win/libs/curl/libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
