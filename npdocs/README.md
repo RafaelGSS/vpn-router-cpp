@@ -1,4 +1,4 @@
-# Documentação da nova Ponte NoPing.
+# Documentação
 
 1. [Estrutura dos arquivos](#estrutura-dos-arquivos)
 2. [Rodando Localhost](#rodando-localhost)
@@ -183,16 +183,10 @@ apt get install zip;
 apt get install git;
 apt-get install libcurl4-openssl-dev;
 ```
- **IMPORTANTE** clonar a **wpp** na home
- 
- ```bash
- root@server:~# git clone https://github.com/1ncrivelSistemas/wpp.git
- ```
  
 **IMPORTANTE** colocar **boost_1_58_0** na  home
 ```bash
 root@server:~# ls -l
 drwx------  9 root root      4096 Aug  9 03:12 boost_1_58_0
-drwxr-xr-x 77 root root      4096 Aug 17 19:38 wpp
 drwxr-xr-x  3 root root      4096 Aug 28 00:31 projects 
 ```
