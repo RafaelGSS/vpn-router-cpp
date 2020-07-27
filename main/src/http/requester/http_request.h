@@ -12,8 +12,6 @@
 #include <src/http/requester/base/base_request.h>
 #include <config.h>
 
-#include <wpp/serialization/json.hpp>
-
 
 using response_callback = std::function<void(uint32_t error, std::string& response)>;
 

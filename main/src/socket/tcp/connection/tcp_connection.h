@@ -42,7 +42,6 @@ protected:
 		bool close_con
 	);
 
-	// Connect reproxy socket on that destination
 	void connect_to_destination(
 		const std::string& address,
 		const uint16_t& port
@@ -52,7 +51,6 @@ public:
 
 	void close_connection();
 
-	// Start async receive data
 	void initialize_first_receive();
 
 	tcp_connection(

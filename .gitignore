@@ -1,4 +1,6 @@
 # Prerequisites
+.ccls-cache/
+tags
 *.d
 .vs/
 *.pdb

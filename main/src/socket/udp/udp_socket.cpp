@@ -3,8 +3,6 @@
 #include <src/socket/packet_manipulation/intercall_methods.h>
 #include <src/database/base/data_access.h>
 
-#include <wpp/net/ip/socket/buffers.hpp>
-
 #include <boost/asio/placeholders.hpp>
 
 void udp_socket::from_client_process_first_packet_to_bridge(

@@ -1,9 +1,6 @@
 #include "alias_info.h"
 #include <boost/asio/ip/address_v4.hpp>
 
-#include <wpp/net/ip/socket/defines.h>
-#include <wpp/net/ip/convert.hpp>
-
 std::string alias_info::ipv4_address_string()
 {
 	return boost::asio::ip::address_v4(ipv4_address).to_string();

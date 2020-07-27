@@ -1,20 +1,8 @@
-#pragma once
-#ifndef __linux__
-	#include <wpp/windows/include_fix/winsock.hpp>
-	#define _WIN32_WINNT_WIN10                  0x0A00 // Windows 10 
-#endif
-
-// WPP INCLUDES
-#include <wpp/settings/conf.hpp>
-#include <wpp/console/console.hpp>
-
-// CURRENT PROJECT INCLUDES
 #include <src/controller/bridge_manager.h>
 #include <src/http/remote/base/remote_api_base.h>
 #include <src/database/base/data_access.h>
 #include <config.h>
 
-// STANDARD INCLUDES
 #include <exception>
 #include <iostream>
 #include <cstdio>
@@ -31,11 +19,7 @@ void init_others() {
 int main()
 {
 	std::shared_ptr<bridge_manager> bridge = std::make_shared<bridge_manager>();
-#ifdef __linux__
-	//wpp::console::parse_args_execute();
-#endif
 	init_others();
-	//wpp::settings::priority::elevate_priority(2);
 
 	bridge->run();
 

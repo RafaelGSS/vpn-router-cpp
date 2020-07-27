@@ -2,9 +2,6 @@
 
 #include <src/settings/file_managment/file_manager.h>
 
-#include <wpp/settings/conf.hpp>
-
-
 void bridge_manager::run_udp()
 {
 	auto config = file_manager_bridge_base::singleton();
